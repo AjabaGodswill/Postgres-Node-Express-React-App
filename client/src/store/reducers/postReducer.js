@@ -2,10 +2,10 @@ import * as ACTION_TYPES from '../actions/action_types'
 
 const initialState = {
     posts: [],
-comments: []
+    comments: []
 }
 
-const authReducer = (state = initialState, action) => {
+const postsReducer = (state = initialState, action) => {
     switch (action.type) {
         case ACTION_TYPES.FETCH_DB_POSTS:
             return {
@@ -17,29 +17,19 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 posts: []
             }
-        case ACTION_TYPES.ADD_PROFILE:
+        case ACTION_TYPES.FETCH_POSTS_COMMENTS:
             return {
                 ...state,
-                profile: action.payload
+                comments: action.payload
             }
-        case ACTION_TYPES.REMOVE_PROFILE:
+        case ACTION_TYPES.REMOVE_POSTS_COMMENTS:
             return {
                 ...state,
-                profile: null
-            }
-        case ACTION_TYPES.SET_DB_PROFILE:
-            return {
-                ...state,
-                dbProfile: action.payload
-            }
-        case ACTION_TYPES.REMOVE_DB_PROFILE:
-            return {
-                ...state,
-                dbProfile: null
+                comments: []
             }
         default:
             return state
     }
 }
 
-export default authReducer
+export default postsReducer

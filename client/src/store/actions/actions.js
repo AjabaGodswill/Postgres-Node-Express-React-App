@@ -36,7 +36,7 @@ export const loginFailure = (error) => ({
 });
 
 // Actions for profile management
-export const add_Profile = (profile) => ({
+export const addProfile = (profile) => ({
     type: ACTION_TYPES.ADD_PROFILE,
     payload: profile,
 });
